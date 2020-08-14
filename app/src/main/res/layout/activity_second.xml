@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#DFDBDB"
     tools:context=".SecondActivity">
 
 
@@ -19,8 +20,14 @@
         android:id="@+id/button3"
         android:text="Button3"/>
 
-    <ListView
+<!--    <ListView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/listview"/>-->
+
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listview"/>
+        android:id="@+id/recyclerview"
+        android:overScrollMode="never"/>
 </LinearLayout>
