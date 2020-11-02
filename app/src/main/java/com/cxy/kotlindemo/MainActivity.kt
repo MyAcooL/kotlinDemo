@@ -8,6 +8,8 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.cxy.kotlindemo.utils.Test1
+import com.cxy.kotlindemo.utils.letterCount
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.StringBuilder
 import java.util.logging.Logger
@@ -18,6 +20,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        var t=Test1
+        t.Split("http://btjj.wegraphic.com/ApiCertificatePhoto/CertificateUpLoadImgrnd/newApi/userInfo")
+
+        val count="asdaEQ@!#1213".letterCount()
+        Log.d("wangwu", "count: $count")
+
+
         val p = Person()
         p.age = 26
         p.name = "AcooL"
@@ -25,6 +35,10 @@ class MainActivity : AppCompatActivity() {
         button1.setOnClickListener {
             //            Toast.makeText(this,"测试Toast",Toast.LENGTH_SHORT).show()
             val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
+        }
+        button2.setOnClickListener {
+            val intent = Intent(this, ThirdActivity::class.java)
             startActivity(intent)
         }
 
@@ -45,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             append("吃完所有的水果了")
             toString()
         }
-        Log.d("wangwu",result)
+//        Log.d("wangwu",result)
 
 //        测试静态方法
         Util.doAction2()

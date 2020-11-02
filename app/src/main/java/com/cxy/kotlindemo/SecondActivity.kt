@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 import com.cxy.kotlindemo.adapter.FriuterAdapter
 import com.cxy.kotlindemo.bean.Friut
 import com.cxy.kotlindemo.utils.SimpleDividerItemDecoration
+import com.cxy.kotlindemo.utils.Test1
 import kotlinx.android.synthetic.main.activity_second.*
 
 class SecondActivity : AppCompatActivity(),View.OnClickListener {
@@ -24,9 +25,10 @@ class SecondActivity : AppCompatActivity(),View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
-        button2.setOnClickListener(this)
-        button3.setOnClickListener(this)
+//        button2.setOnClickListener(this)
+//        button3.setOnClickListener(this)
 
+//          button3.layoutParams.
 //        val list= listOf("1","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2")
 //        val adapter=ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,list)
 //        listview.adapter=adapter
@@ -37,8 +39,7 @@ class SecondActivity : AppCompatActivity(),View.OnClickListener {
         val layoutManager=GridLayoutManager(this,3)
         recyclerview.layoutManager=layoutManager
         recyclerview.addItemDecoration(object : ItemDecoration() {
-            override fun getItemOffsets(outRect: Rect,view: View,parent: RecyclerView,state: RecyclerView.State
-            ) {
+            override fun getItemOffsets(outRect: Rect,view: View,parent: RecyclerView,state: RecyclerView.State) {
                 super.getItemOffsets(outRect, view, parent, state)
                 outRect.bottom = 10
                 outRect.left = 5
@@ -49,11 +50,12 @@ class SecondActivity : AppCompatActivity(),View.OnClickListener {
         val adapter=FriuterAdapter(fruitList)
         recyclerview.adapter=adapter
 
+
     }
 
     private fun initFruits() {
 
-        repeat(2){
+        repeat(20){
             fruitList.add(Friut("qqweqwe",R.mipmap.ic_launcher))
             fruitList.add(Friut("qqweqwe",R.mipmap.ic_launcher))
             fruitList.add(Friut("qqweqwe",R.mipmap.ic_launcher))
@@ -65,18 +67,18 @@ class SecondActivity : AppCompatActivity(),View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        when(v?.id){
-            R.id.button2 -> Toast.makeText(this,"点击了按钮2",Toast.LENGTH_SHORT).show()
-            R.id.button3 -> {
-                AlertDialog.Builder(this).apply {
-                    setTitle("这是一个没有什么意义的弹框")
-                    setMessage("这是一条没有什么意义的消息")
-                    setCancelable(false)
-                    setPositiveButton("确定"){dialog,which->Toast.makeText(this@SecondActivity as Context,"点击了确定",Toast.LENGTH_SHORT).show()}
-                    setNegativeButton("取消"){dialog,which ->Toast.makeText(this@SecondActivity as Context,"点击了取消",Toast.LENGTH_SHORT).show()}
-                    show()
-                }
-            }
-        }
+//        when(v?.id){
+//            R.id.button2 -> Toast.makeText(this,"点击了按钮2",Toast.LENGTH_SHORT).show()
+//            R.id.button3 -> {
+//                AlertDialog.Builder(this).apply {
+//                    setTitle("这是一个没有什么意义的弹框")
+//                    setMessage("这是一条没有什么意义的消息")
+//                    setCancelable(false)
+//                    setPositiveButton("确定"){dialog,which->Toast.makeText(this@SecondActivity as Context,"点击了确定",Toast.LENGTH_SHORT).show()}
+//                    setNegativeButton("取消"){dialog,which ->Toast.makeText(this@SecondActivity as Context,"点击了取消",Toast.LENGTH_SHORT).show()}
+//                    show()
+//                }
+//            }
+//        }
     }
 }
